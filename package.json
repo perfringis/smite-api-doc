@@ -1,0 +1,19 @@
+{
+  "name": "smite-api-doc",
+  "version": "1.0.0",
+  "description": "smite-api-doc",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dzidzileyla/smite-api-doc.git"
+  },
+  "author": "dzidzileyla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dzidzileyla/smite-api-doc/issues"
+  },
+  "homepage": "https://github.com/Dzidzileyla/smite-api-doc#readme"
+}
