@@ -80,7 +80,7 @@ A means of validating that a session is established.
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/testsessionjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
 ```
 
 ### Example response
@@ -89,3 +89,41 @@ curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB
 This was a successful test with the following parameters added: developer: 4164 time: 1/9/2022 10:43:23 AM signature: 63BBF96186ECB0485C9804727EB4FD2F session: 96AD8C1A916E461686240EE30D4E67EF
 ```
 
+## Get data used
+
+Returns API Developer daily usage limits and the current status against those limits.
+
+```
+/getdataused[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `String` | "json" or "xml" value |
+| developerId | `String` | It is a credential provided by hirez studio |
+| signature | `String` | md5 hash(more details in link) |
+| session | `String` | Session id created by createsession endpoint |
+| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getdatausedjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+```
+
+### Example response
+
+```json
+[
+  {
+    "Active_Sessions": 1,
+    "Concurrent_Sessions": 50,
+    "Request_Limit_Daily": 7500,
+    "Session_Cap": 500,
+    "Session_Time_Limit": 15,
+    "Total_Requests_Today": 8,
+    "Total_Sessions_Today": 6,
+    "ret_msg": null
+  }
+]
+```
