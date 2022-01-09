@@ -64,7 +64,7 @@ curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB
 A means of validating that a session is established.
 
 ```
-/testsession[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
+GET /testsession[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
 ```
 
 ### Query parameters
@@ -94,7 +94,7 @@ This was a successful test with the following parameters added: developer: 4164 
 Returns API Developer daily usage limits and the current status against those limits.
 
 ```
-/getdataused[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
+GET /getdataused[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
 ```
 
 ### Query parameters
@@ -106,6 +106,8 @@ Returns API Developer daily usage limits and the current status against those li
 | signature | `String` | md5 hash(more details in link) |
 | session | `String` | Session id created by createsession endpoint |
 | timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+
+### Example request
 
 ```bash
 curl https://api.smitegame.com/smiteapi.svc/getdatausedjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
