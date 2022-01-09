@@ -40,7 +40,7 @@ GET /createsession[ResponseFormat]/{developerId}/{signature}/{timestamp}
 |----------|------------|---------------------------------------|
 | ResponseFormat | `String` | "json" or "xml" value |
 | developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link)|
+| signature | `String` | md5 hash(more details in link) |
 | timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
 
 ### Example request
@@ -58,3 +58,34 @@ curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB
   "timestamp": "1/9/2022 09:05:04 AM"
 }
 ```
+
+## Test session
+
+A means of validating that a session is established.
+
+```
+/testsession[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `String` | "json" or "xml" value |
+| developerId | `String` | It is a credential provided by hirez studio |
+| signature | `String` | md5 hash(more details in link) |
+| session | `String` | Session id created by createsession endpoint |
+| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+```
+
+### Example response
+
+```
+This was a successful test with the following parameters added: developer: 4164 time: 1/9/2022 10:43:23 AM signature: 63BBF96186ECB0485C9804727EB4FD2F session: 96AD8C1A916E461686240EE30D4E67EF
+```
+
