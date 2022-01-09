@@ -53,8 +53,8 @@ curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB
 
 ```json
 {
-    ret_msg: 'Approved',
-    session_id: '96AD8C1A916E461686240EE30D4E67EF',
-    timestamp: '1/9/2022 09:05:04 AM'
+  "ret_msg": "Approved",
+  "session_id": "96AD8C1A916E461686240EE30D4E67EF",
+  "timestamp": "1/9/2022 09:05:04 AM"
 }
 ```
