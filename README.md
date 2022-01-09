@@ -205,3 +205,36 @@ curl https://api.smitegame.com/smiteapi.svc/gethirezserverstatusjson/2117/63BBF9
   }
 ]
 ```
+
+## Get patch info
+
+Function returns information about current deployed patch. Currently, this information only includes patch version.
+
+```
+GET /getpatchinfo[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `String` | "json" or "xml" value |
+| developerId | `String` | It is a credential provided by hirez studio |
+| signature | `String` | md5 hash(more details in link) |
+| session | `String` | Session id created by createsession endpoint |
+| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getpatchinfojson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+```
+
+### Example response
+
+```json
+{
+  "ret_msg": null, 
+  "version_string": "8.12" 
+}
+```
