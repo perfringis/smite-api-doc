@@ -129,3 +129,79 @@ curl https://api.smitegame.com/smiteapi.svc/getdatausedjson/2117/63BBF96186ECB04
   }
 ]
 ```
+
+## Get HIREZ server status
+
+Function returns UP/DOWN status for the primary game/platform environments.  Data is cached once a minute.
+
+```
+GET /gethirezserverstatus[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `String` | "json" or "xml" value |
+| developerId | `String` | It is a credential provided by hirez studio |
+| signature | `String` | md5 hash(more details in link) |
+| session | `String` | Session id created by createsession endpoint |
+| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/gethirezserverstatusjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+```
+
+### Example response
+
+```json
+[
+  {
+    "entry_datetime": "2022-01-09 10:55:10.134",
+    "environment": "live",
+    "limited_access": false,
+    "platform": "pc",
+    "ret_msg": null,
+    "status": "UP",
+    "version": "8.12.6904.8"
+  },
+  {
+    "entry_datetime": "2022-01-09 10:55:10.134",
+    "environment": "live",
+    "limited_access": false,
+    "platform": "switch",
+    "ret_msg": null,
+    "status": "UP",
+    "version": "8.12.6904.8"
+  },
+  {
+    "entry_datetime": "2022-01-09 10:55:10.134",
+    "environment": "live",
+    "limited_access": false,
+    "platform": "xbox",
+    "ret_msg": null,
+    "status": "UP",
+    "version": "8.12.6904.8"
+  },
+  {
+    "entry_datetime": "2022-01-09 10:55:10.134",
+    "environment": "live",
+    "limited_access": false,
+    "platform": "ps4",
+    "ret_msg": null,
+    "status": "UP",
+    "version": "8.12.6904.8"
+  },
+  {
+    "entry_datetime": "2022-01-09 10:54:43.555",
+    "environment": "pts",
+    "limited_access": false,
+    "platform": "pc",
+    "ret_msg": null,
+    "status": "UP",
+    "version": "9.1.6945.1"
+  }
+]
+```
