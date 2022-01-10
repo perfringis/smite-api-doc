@@ -680,3 +680,41 @@ curl https://api.smitegame.com/smiteapi.svc/getgodleaderboardjson/2117/63BBF9618
   ...
 ]
 ```
+
+## Get god alt abilities
+
+Returns alt abilities for all gods.
+
+```
+GET /getgodaltabilities[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `String` | "json" or "xml" value |
+| developerId | `String` | It is a credential provided by hirez studio |
+| signature | `String` | md5 hash(more details in link) |
+| session | `String` | Session id created by createsession endpoint |
+| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+```
+
+```json
+[
+  {
+    "alt_name": "Loki V2A A02 Sub Device",
+    "alt_position": "2",
+    "god": "Loki",
+    "god_id": 1797,
+    "item_id": 18614,
+    "ret_msg": null
+  },
+  ...
+]
+```
