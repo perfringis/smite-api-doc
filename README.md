@@ -169,42 +169,7 @@ curl https://api.smitegame.com/smiteapi.svc/gethirezserverstatusjson/2117/63BBF9
     "status": "UP",
     "version": "8.12.6904.8"
   },
-  {
-    "entry_datetime": "2022-01-09 10:55:10.134",
-    "environment": "live",
-    "limited_access": false,
-    "platform": "switch",
-    "ret_msg": null,
-    "status": "UP",
-    "version": "8.12.6904.8"
-  },
-  {
-    "entry_datetime": "2022-01-09 10:55:10.134",
-    "environment": "live",
-    "limited_access": false,
-    "platform": "xbox",
-    "ret_msg": null,
-    "status": "UP",
-    "version": "8.12.6904.8"
-  },
-  {
-    "entry_datetime": "2022-01-09 10:55:10.134",
-    "environment": "live",
-    "limited_access": false,
-    "platform": "ps4",
-    "ret_msg": null,
-    "status": "UP",
-    "version": "8.12.6904.8"
-  },
-  {
-    "entry_datetime": "2022-01-09 10:54:43.555",
-    "environment": "pts",
-    "limited_access": false,
-    "platform": "pc",
-    "ret_msg": null,
-    "status": "UP",
-    "version": "9.1.6945.1"
-  }
+  ...
 ]
 ```
 
