@@ -727,3 +727,47 @@ curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF961
   ...
 ]
 ```
+
+## Get god recommended items
+
+Returns the Recommended Items for a particular God.
+
+```
+GET /getgodrecommendeditems[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{godid}/{languageCode}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `String` | "json" or "xml" value |
+| developerId | `String` | It is a credential provided by hirez studio |
+| signature | `String` | md5 hash(more details in link) |
+| session | `String` | Session id created by createsession endpoint |
+| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| godId | `String` | God id  |
+| languageCode | `String` | Language code(more details in link)  |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1797/1 -H "Accept: application/json"
+```
+
+```json
+[
+  {
+    "Category": "Consumable",
+    "Item": "Ward",
+    "Role": "Standard",
+    "category_value_id": 10779,
+    "god_id": 2063,
+    "god_name": "Ratatoskr",
+    "icon_id": 1992,
+    "item_id": 7668,
+    "ret_msg": null,
+    "role_value_id": 10770
+  },
+  ...
+]
+```
