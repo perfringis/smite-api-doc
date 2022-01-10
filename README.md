@@ -771,3 +771,61 @@ curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF961
   ...
 ]
 ```
+
+## Get items
+
+Returns all Items and their various attributes.
+
+```
+GET /getitems[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{languageCode}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `String` | "json" or "xml" value |
+| developerId | `String` | It is a credential provided by hirez studio |
+| signature | `String` | md5 hash(more details in link) |
+| session | `String` | Session id created by createsession endpoint |
+| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| languageCode | `String` | Language code(more details in link)  |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getitemsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1 -H "Accept: application/json"
+```
+
+```json
+[
+  {
+    "ActiveFlag": "y",
+    "ChildItemId": 0,
+    "DeviceName": "Iron Mail",
+    "IconId": 2866,
+    "ItemDescription": {
+      "Description": "Physical Protection and Health.",
+      "Menuitems": [{
+        "Description": "Health",
+        "Value": "+75"
+      }, {
+        "Description": "Physical Protection",
+        "Value": "+10"
+      }],
+      "SecondaryDescription": null
+    },
+    "ItemId": 7526,
+    "ItemTier": 1,
+    "Price": 650,
+    "RestrictedRoles": "no restrictions",
+    "RootItemId": 7526,
+    "ShortDesc": "Physical Protection and Health.",
+    "StartingItem": false,
+    "Type": "Item",
+    "itemIcon_URL": "https://webcdn.hirezstudios.com/smite/item-icons/iron-mail.jpg",
+    "ret_msg": null
+  },
+  ...
+]
+```
