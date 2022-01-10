@@ -660,7 +660,7 @@ GET /getgodleaderboard[ResponseFormat]/{developerId}/{signature}/{session}/{time
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getgodsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/440 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getgodleaderboardjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/440 -H "Accept: application/json"
 ```
 
 ### Example response
