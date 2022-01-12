@@ -741,13 +741,13 @@ GET /getgodrecommendeditems[ResponseFormat]/{developerId}/{signature}/{session}/
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
-| godId | `String` | God id  |
-| languageCode | `String` | Language code(more details in link)  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| godId | `integer` | God id  |
+| languageCode | `integer` | Language code(more details in link)  |
 
 ### Example request
 
@@ -785,12 +785,12 @@ GET /getitems[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{l
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
-| languageCode | `String` | Language code(more details in link)  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| languageCode | `integer` | Language code(more details in link)  |
 
 ### Example request
 
