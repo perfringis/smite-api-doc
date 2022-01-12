@@ -19,7 +19,7 @@ GET /ping[ResponseFormat]
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/pingjson -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/pingjson
 ```
 
 ### Example response
@@ -40,15 +40,15 @@ GET /createsession[ResponseFormat]/{developerId}/{signature}/{timestamp}
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB0485C9804727EB4FD2F/20220109090504 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/createsessionjson/2117/63BBF96186ECB0485C9804727EB4FD2F/20220111190948
 ```
 
 ### Example response
@@ -73,16 +73,16 @@ GET /testsession[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/testsessionjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/testsessionjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504
 ```
 
 ### Example response
@@ -103,16 +103,16 @@ GET /getdataused[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getdatausedjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getdatausedjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504
 ```
 
 ### Example response
@@ -144,16 +144,16 @@ GET /gethirezserverstatus[ResponseFormat]/{developerId}/{signature}/{session}/{t
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/gethirezserverstatusjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/gethirezserverstatusjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504
 ```
 
 ### Example response
@@ -185,16 +185,16 @@ GET /getpatchinfo[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getpatchinfojson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getpatchinfojson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504
 ```
 
 ### Example response
@@ -220,17 +220,17 @@ GET /getgods[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{la
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
-| languageCode | `String` | Language code(more details in link)  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| languageCode | `integer` | Language code(more details in link)  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getgodsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getgodsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1
 ```
 
 ### Example response
@@ -614,18 +614,18 @@ GET /getgodleaderboard[ResponseFormat]/{developerId}/{signature}/{session}/{time
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
-| godId | `String` | God id  |
-| queue | `String` | Queue code(more details in link)  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| godId | `integer` | God id  |
+| queue | `integer` | Queue code(more details in link)  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getgodleaderboardjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/440 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getgodleaderboardjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/440
 ```
 
 ### Example response
@@ -658,16 +658,16 @@ GET /getgodaltabilities[ResponseFormat]/{developerId}/{signature}/{session}/{tim
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504
 ```
 
 ```json
@@ -696,17 +696,18 @@ GET /getgodskins[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
-| godId | `String` | God id  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| godId | `integer` | God id  |
+| languageCode | `integer` | Language code(more details in link)  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1797 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getgodskinsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/1
 ```
 
 ```json
@@ -740,18 +741,18 @@ GET /getgodrecommendeditems[ResponseFormat]/{developerId}/{signature}/{session}/
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
-| godId | `String` | God id  |
-| languageCode | `String` | Language code(more details in link)  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| godId | `integer` | God id  |
+| languageCode | `integer` | Language code(more details in link)  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1797/1 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getgodrecommendeditemsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/1
 ```
 
 ```json
@@ -784,17 +785,17 @@ GET /getitems[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{l
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| ResponseFormat | `String` | "json" or "xml" value |
-| developerId | `String` | It is a credential provided by hirez studio |
-| signature | `String` | md5 hash(more details in link) |
-| session | `String` | Session id created by createsession endpoint |
-| timestamp | `String` | Current time(formatted 'yyyyMMddHHmmss')  |
-| languageCode | `String` | Language code(more details in link)  |
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| languageCode | `integer` | Language code(more details in link)  |
 
 ### Example request
 
 ```bash
-curl https://api.smitegame.com/smiteapi.svc/getitemsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1 -H "Accept: application/json"
+curl https://api.smitegame.com/smiteapi.svc/getitemsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1
 ```
 
 ```json
