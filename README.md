@@ -854,7 +854,11 @@ Returns league and other high level data for a particular player.
 ### Example request
 
 ```
-GET /getplayer[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{player}/{portalId}
+GET /getplayer[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{playerId}/{portalId}
+```
+
+```
+GET /getplayer[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{playerId}
 ```
 
 ### Query parameters
@@ -1030,6 +1034,47 @@ curl https://api.smitegame.com/smiteapi.svc/getplayerjson/2117/63BBF96186ECB0485
     "Wins": 0,
     "hz_gamer_tag": null,
     "hz_player_name": "dzidzileyla",
+    "ret_msg": null
+  }
+]
+```
+
+## Get player id by name
+
+Function returns a list of Hi-Rez playerId values (expected list size = 1) for playerName provided.  The playerId returned is expected to be used in various other endpoints to represent the player/individual regardless of platform.
+
+### Example request
+
+```
+GET /getplayeridbyname[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{playerName}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| playerName | `string` | Player name(e.g dzidzileyla) |
+
+### Example requests
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayeridbynamejson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/dzidzileyla
+```
+
+### Example response
+
+```json
+[
+  {
+    "player_id": 123456789,
+    "portal": "Steam",
+    "portal_id": "5",
+    "privacy_flag": "n",
     "ret_msg": null
   }
 ]
