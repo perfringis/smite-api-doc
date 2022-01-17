@@ -830,3 +830,31 @@ curl https://api.smitegame.com/smiteapi.svc/getitemsjson/2117/63BBF96186ECB0485C
   ...
 ]
 ```
+
+# Players & PlayerIds
+
+## Get player
+
+Returns league and other high level data for a particular player.
+
+```
+GET /getplayer[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{player}/{portalId}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| playerId | `integer|string` | Player id(e.g dzidzileyla or 716809142) |
+| portalId | `integer` | A “Portal” is a gateway into our games via an identifier(more details in link)  |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayerjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/716809142/1
+```
