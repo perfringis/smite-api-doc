@@ -1079,3 +1079,45 @@ curl https://api.smitegame.com/smiteapi.svc/getplayeridbynamejson/2117/63BBF9618
   }
 ]
 ```
+
+## Get playerId by portalUserId
+
+Function returns a list of Hi-Rez playerId values (expected list size = 1) for {portalId}/{portalUserId} combination provided.  The playerId returned is expected to be used in various other endpoints to represent the player/individual regardless of platform.
+
+### Example request
+
+```
+GET /getplayeridbyportaluserid[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{portalId}/{portalUserId}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| portalId | `integer` | A “Portal” is a gateway into our games via an identifier(more details in link)  |
+| portalUserId | `integer` | The (usually) 3rd-Party identifier for a Portal.  Examples:  Steam ID, PS4 GamerTag, Xbox GamerTag, Switch GamerTag |
+
+### Example requests
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayeridbyportaluseridjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/5/76561198221757724
+```
+
+### Example response
+
+```json
+[
+  {
+    "player_id": 716809142,
+    "portal": "Steam",
+    "portal_id": "5",
+    "privacy_flag": "n",
+    "ret_msg": null
+  }
+]
+```
