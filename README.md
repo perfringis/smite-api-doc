@@ -670,6 +670,8 @@ GET /getgodaltabilities[ResponseFormat]/{developerId}/{signature}/{session}/{tim
 curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504
 ```
 
+### Example response
+
 ```json
 [
   {
@@ -687,6 +689,8 @@ curl https://api.smitegame.com/smiteapi.svc/getgodaltabilitiesjson/2117/63BBF961
 ## Get god skins
 
 Returns all available skins for a particular God.
+
+### Example request
 
 ```
 GET /getgodskins[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{godId}/{languageCode}
@@ -709,6 +713,8 @@ GET /getgodskins[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}
 ```bash
 curl https://api.smitegame.com/smiteapi.svc/getgodskinsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/1
 ```
+
+### Example response
 
 ```json
 [
@@ -733,6 +739,8 @@ curl https://api.smitegame.com/smiteapi.svc/getgodskinsjson/2117/63BBF96186ECB04
 
 Returns the Recommended Items for a particular God.
 
+### Example request
+
 ```
 GET /getgodrecommendeditems[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{godid}/{languageCode}
 ```
@@ -754,6 +762,8 @@ GET /getgodrecommendeditems[ResponseFormat]/{developerId}/{signature}/{session}/
 ```bash
 curl https://api.smitegame.com/smiteapi.svc/getgodrecommendeditemsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/3492/1
 ```
+
+### Example response
 
 ```json
 [
@@ -777,6 +787,8 @@ curl https://api.smitegame.com/smiteapi.svc/getgodrecommendeditemsjson/2117/63BB
 
 Returns all Items and their various attributes.
 
+### Example request
+
 ```
 GET /getitems[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{languageCode}
 ```
@@ -797,6 +809,8 @@ GET /getitems[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{l
 ```bash
 curl https://api.smitegame.com/smiteapi.svc/getitemsjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/1
 ```
+
+### Example response
 
 ```json
 [
@@ -828,5 +842,325 @@ curl https://api.smitegame.com/smiteapi.svc/getitemsjson/2117/63BBF96186ECB0485C
     "ret_msg": null
   },
   ...
+]
+```
+
+# Players & PlayerIds
+
+## Get player
+
+Returns league and other high level data for a particular player.
+
+### Example request
+
+```
+GET /getplayer[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{playerId}/{portalId}
+```
+
+```
+GET /getplayer[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{playerId}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| playerId | `integer|string` | Player id(e.g dzidzileyla or 123456789) |
+| portalId | `integer` | A “Portal” is a gateway into our games via an identifier(more details in link)  |
+
+### Example requests
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayerjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/123456789/1
+```
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayerjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/123456789
+```
+
+### Example response
+
+```json
+[
+  {
+    "ActivePlayerId": 123456789,
+    "Avatar_URL": "http://webcdn.hirezstudios.com/smite-app/wp-content/uploads/2015/06/CountryFlag_Poland.png",
+    "Created_Datetime": "12/31/2021 12:43:43 AM",
+    "HoursPlayed": 0,
+    "Id": 123456789,
+    "Last_Login_Datetime": "1/17/2022 4:50:03 PM",
+    "Leaves": 0,
+    "Level": 22,
+    "Losses": 1,
+    "MasteryLevel": 10,
+    "MergedPlayers": null,
+    "MinutesPlayed": 22,
+    "Name": "dzidzi",
+    "Personal_Status_Message": "",
+    "Platform": "Steam",
+    "Rank_Stat_Conquest": 0,
+    "Rank_Stat_Conquest_Controller": 0,
+    "Rank_Stat_Duel": 0,
+    "Rank_Stat_Duel_Controller": 0,
+    "Rank_Stat_Joust": 0,
+    "Rank_Stat_Joust_Controller": 0,
+    "RankedConquest": {
+      "Leaves": 0,
+      "Losses": 0,
+      "Name": "League",
+      "Points": 0,
+      "PrevRank": 0,
+      "Rank": 0,
+      "Rank_Stat": 0,
+      "Rank_Stat_Conquest": null,
+      "Rank_Stat_Joust": null,
+      "Rank_Variance": 5,
+      "Round": 0,
+      "Season": 0,
+      "Tier": 0,
+      "Trend": 0,
+      "Wins": 0,
+      "player_id": null,
+      "ret_msg": null
+    },
+    "RankedConquestController": {
+      "Leaves": 0,
+      "Losses": 0,
+      "Name": "League Controller",
+      "Points": 0,
+      "PrevRank": 0,
+      "Rank": 0,
+      "Rank_Stat": 0,
+      "Rank_Stat_Conquest": null,
+      "Rank_Stat_Joust": null,
+      "Rank_Variance": 5,
+      "Round": 0,
+      "Season": 0,
+      "Tier": 0,
+      "Trend": 0,
+      "Wins": 0,
+      "player_id": null,
+      "ret_msg": null
+    },
+    "RankedDuel": {
+      "Leaves": 0,
+      "Losses": 0,
+      "Name": "Duel",
+      "Points": 0,
+      "PrevRank": 0,
+      "Rank": 0,
+      "Rank_Stat": 0,
+      "Rank_Stat_Conquest": null,
+      "Rank_Stat_Joust": null,
+      "Rank_Variance": 5,
+      "Round": 0,
+      "Season": 0,
+      "Tier": 0,
+      "Trend": 0,
+      "Wins": 0,
+      "player_id": null,
+      "ret_msg": null
+    },
+    "RankedDuelController": {
+      "Leaves": 0,
+      "Losses": 0,
+      "Name": "Duel Controller",
+      "Points": 0,
+      "PrevRank": 0,
+      "Rank": 0,
+      "Rank_Stat": 0,
+      "Rank_Stat_Conquest": null,
+      "Rank_Stat_Joust": null,
+      "Rank_Variance": 5,
+      "Round": 0,
+      "Season": 0,
+      "Tier": 0,
+      "Trend": 0,
+      "Wins": 0,
+      "player_id": null,
+      "ret_msg": null
+    },
+    "RankedJoust": {
+      "Leaves": 0,
+      "Losses": 0,
+      "Name": "Joust",
+      "Points": 0,
+      "PrevRank": 0,
+      "Rank": 0,
+      "Rank_Stat": 0,
+      "Rank_Stat_Conquest": null,
+      "Rank_Stat_Joust": null,
+      "Rank_Variance": 5,
+      "Round": 0,
+      "Season": 0,
+      "Tier": 0,
+      "Trend": 0,
+      "Wins": 0,
+      "player_id": null,
+      "ret_msg": null
+    },
+    "RankedJoustController": {
+      "Leaves": 0,
+      "Losses": 0,
+      "Name": "Joust Controller",
+      "Points": 0,
+      "PrevRank": 0,
+      "Rank": 0,
+      "Rank_Stat": 0,
+      "Rank_Stat_Conquest": null,
+      "Rank_Stat_Joust": null,
+      "Rank_Variance": 5,
+      "Round": 0,
+      "Season": 0,
+      "Tier": 0,
+      "Trend": 0,
+      "Wins": 0,
+      "player_id": null,
+      "ret_msg": null
+    },
+    "Region": "Europe",
+    "TeamId": 0,
+    "Team_Name": "",
+    "Tier_Conquest": 0,
+    "Tier_Duel": 0,
+    "Tier_Joust": 0,
+    "Total_Achievements": 24,
+    "Total_Worshippers": 1272,
+    "Wins": 0,
+    "hz_gamer_tag": null,
+    "hz_player_name": "dzidzileyla",
+    "ret_msg": null
+  }
+]
+```
+
+## Get player id by name
+
+Function returns a list of Hi-Rez playerId values (expected list size = 1) for playerName provided.  The playerId returned is expected to be used in various other endpoints to represent the player/individual regardless of platform.
+
+### Example request
+
+```
+GET /getplayeridbyname[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{playerName}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| playerName | `string` | Player name(e.g dzidzileyla) |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayeridbynamejson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/dzidzileyla
+```
+
+### Example response
+
+```json
+[
+  {
+    "player_id": 123456789,
+    "portal": "Steam",
+    "portal_id": "5",
+    "privacy_flag": "n",
+    "ret_msg": null
+  }
+]
+```
+
+## Get playerId by portalUserId
+
+Function returns a list of Hi-Rez playerId values (expected list size = 1) for {portalId}/{portalUserId} combination provided.  The playerId returned is expected to be used in various other endpoints to represent the player/individual regardless of platform.
+
+### Example request
+
+```
+GET /getplayeridbyportaluserid[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{portalId}/{portalUserId}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| portalId | `integer` | A “Portal” is a gateway into our games via an identifier(more details in link)  |
+| portalUserId | `integer` | The (usually) 3rd-Party identifier for a Portal.  Examples:  Steam ID, PS4 GamerTag, Xbox GamerTag, Switch GamerTag |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayeridbyportaluseridjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/5/76561198221757724
+```
+
+### Example response
+
+```json
+[
+  {
+    "player_id": 716809142,
+    "portal": "Steam",
+    "portal_id": "5",
+    "privacy_flag": "n",
+    "ret_msg": null
+  }
+]
+```
+
+## Get playerIds by gamerTag
+
+Function returns a list of Hi-Rez playerId values for {portalId}/{portalUserId} combination provided.  The appropriate playerId extracted from this list by the API end user is expected to be used in various other endpoints to represent the player/individual regardless of platform.
+
+
+### Example request
+
+```
+GET /getplayeridsbygamertag[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{portalId}/{gamerTag}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| portalId | `integer` | A “Portal” is a gateway into our games via an identifier(more details in link)  |
+| gamerTag | `string` | Typically an alphanumeric descriptor of an individual on a Portal.  This value might not be unique depending on Portal |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayeridbyportaluseridjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/5/dzidzileyla
+```
+
+### Example response
+
+```json
+[
+  {
+    "player_id": 123456789,
+    "portal": "Steam",
+    "portal_id": "5",
+    "privacy_flag": "n",
+    "ret_msg": null
+  }
 ]
 ```
