@@ -1060,7 +1060,7 @@ GET /getplayeridbyname[ResponseFormat]/{developerId}/{signature}/{session}/{time
 | timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
 | playerName | `string` | Player name(e.g dzidzileyla) |
 
-### Example requests
+### Example request
 
 ```bash
 curl https://api.smitegame.com/smiteapi.svc/getplayeridbynamejson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/dzidzileyla
@@ -1102,7 +1102,7 @@ GET /getplayeridbyportaluserid[ResponseFormat]/{developerId}/{signature}/{sessio
 | portalId | `integer` | A “Portal” is a gateway into our games via an identifier(more details in link)  |
 | portalUserId | `integer` | The (usually) 3rd-Party identifier for a Portal.  Examples:  Steam ID, PS4 GamerTag, Xbox GamerTag, Switch GamerTag |
 
-### Example requests
+### Example request
 
 ```bash
 curl https://api.smitegame.com/smiteapi.svc/getplayeridbyportaluseridjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/5/76561198221757724
@@ -1114,6 +1114,49 @@ curl https://api.smitegame.com/smiteapi.svc/getplayeridbyportaluseridjson/2117/6
 [
   {
     "player_id": 716809142,
+    "portal": "Steam",
+    "portal_id": "5",
+    "privacy_flag": "n",
+    "ret_msg": null
+  }
+]
+```
+
+## Get playerIds by gamerTag
+
+Function returns a list of Hi-Rez playerId values for {portalId}/{portalUserId} combination provided.  The appropriate playerId extracted from this list by the API end user is expected to be used in various other endpoints to represent the player/individual regardless of platform.
+
+
+### Example request
+
+```
+GET /getplayeridsbygamertag[ResponseFormat]/{developerId}/{signature}/{session}/{timestamp}/{portalId}/{gamerTag}
+```
+
+### Query parameters
+
+| Name     | Type       | Description                           |
+|----------|------------|---------------------------------------|
+| ResponseFormat | `string` | "json" or "xml" value |
+| developerId | `integer` | It is a credential provided by hirez studio |
+| signature | `string` | md5 hash(more details in link) |
+| session | `string` | Session id created by createsession endpoint |
+| timestamp | `integer` | Current time(formatted 'yyyyMMddHHmmss')  |
+| portalId | `integer` | A “Portal” is a gateway into our games via an identifier(more details in link)  |
+| gamerTag | `string` | Typically an alphanumeric descriptor of an individual on a Portal.  This value might not be unique depending on Portal |
+
+### Example request
+
+```bash
+curl https://api.smitegame.com/smiteapi.svc/getplayeridbyportaluseridjson/2117/63BBF96186ECB0485C9804727EB4FD2F/96AD8C1A916E461686240EE30D4E67EF/20220109090504/5/dzidzileyla
+```
+
+### Example response
+
+```json
+[
+  {
+    "player_id": 123456789,
     "portal": "Steam",
     "portal_id": "5",
     "privacy_flag": "n",
